@@ -4,7 +4,7 @@
 
 <mapper namespace="com.report.mapper.UploadedFileMapper">
 
-	<select id="findByNo" resultType="UplodedFile">
+	<select id="findByNo" resultType="UploadedFile">
 		SELECT * FROM UplodedFile WHERE no = #{no}
 	</select>
 
@@ -17,8 +17,8 @@
 		DELETE FROM UplodedFile WHERE no = #{no}
 	</delete>
 	  
-	<select id="findAll" resultType="UplodedFile">
-		SELECT *
-		FROM UplodedFile
+	<select id="findAll" resultType="UploadedFile">
+		SELECT * FROM UplodedFile
 	</select>
+	
 </mapper>
