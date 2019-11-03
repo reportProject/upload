@@ -2,6 +2,7 @@ package com.report.controller;
 
 import java.io.BufferedOutputStream;
 
+
 import java.io.IOException;
 import java.net.URLEncoder;
 
@@ -41,14 +42,14 @@ public class File1Controller {
     }
 
     @RequestMapping("file1/delete")
-    public String delete(@RequestParam("id") int id) throws Exception {
-        uploadedFile1Service.delete(id);
+    public String delete(@RequestParam("no") int no) throws Exception {
+        uploadedFile1Service.delete(no);
         return "redirect:list";
     }
 
     @RequestMapping("file1/download")
-    public void download(@RequestParam("id") int id, HttpServletResponse response) throws Exception {
-        UploadedFile uploadedfile = uploadedFile1Service.getUploadedFile(id);
+    public void download(@RequestParam("no") int no, HttpServletResponse response) throws Exception {
+        UploadedFile uploadedfile = uploadedFile1Service.getUploadedFile(no);
        if (uploadedfile == null) return;
         String fileName = URLEncoder.encode(uploadedfile.getFile_name(),"UTF-8");
         response.setContentType("application/octet-stream");

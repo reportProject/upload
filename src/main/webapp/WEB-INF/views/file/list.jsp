@@ -23,8 +23,7 @@
         <td>
           <fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${ file.file_time }" /></td>
         <td>
-          <c:url var="downloadURL" value="${uploadPath}/${file.file_name}" />
-          <a class="btn btn-default btn-xs" href="${downloadURL}">다운로드</a>
+          <a class="btn btn-default btn-xs" href="download?no=${file.no}">다운로드</a>
           <a class="btn btn-default btn-xs" href="delete?no=${file.no}">삭제</a>
         </td>
       </tr>
